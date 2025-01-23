@@ -1,8 +1,11 @@
 const express = require('express');
 const db = require('./initdb');
 const geoip = require('geoip-lite');
+const morgan = require('morgan');
 const PORT = 3000;
 const app = express();
+
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
     res.send("Hola mundo");
